@@ -1,0 +1,303 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.navbar .nav-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #ff6600;
+}
+
+.navbar .menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('1.png') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-text h1 {
+  font-size: 60px;
+}
+
+.hero-text p {
+  font-size: 24px;
+}
+
+.cta {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.cta:hover {
+  background-color: #e65c00;
+}
+
+/* Categories & Featured Styling */
+.categories, .featured-section, .reviews-section {
+  padding: 50px 5%;
+  text-align: center;
+}
+
+.category-grid, .featured-grid, .hoodies-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* General Styles for Images in Both Sections */
+.category-item img, .hoodie-item img {
+  width: 100%; /* Full width, flexible for all screens */
+  max-width: 300px; /* Maximum width for larger screens */
+  height: 300px; /* Fixed height */
+  object-fit: cover;  /* Ensures images maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3); /* Carved border effect */
+}
+
+/* Hover effect for the carved border */
+.category-item img:hover, .hoodie-item img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5); /* Deeper carved effect on hover */
+}
+
+/* Styling for category and hoodie items */
+.category-item, .hoodie-item {
+  text-align: center;
+  flex-basis: 300px; /* Ensures consistent size in the grid */
+}
+
+/* Styling for "See More" buttons */
+.btn {
+  display: inline-block;
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e65c00;
+}
+
+/* Featured Section */
+.featured-item img {
+  width: 100%;  /* Full width */
+  max-width: 300px;  /* Fixed max-width */
+  height: 300px; /* Fixed height */
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.featured-item img:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 50px 10%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid white;
+}
+
+.footer-section img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media only screen and (max-width: 1200px) {
+  .hero-text h1 {
+    font-size: 50px;
+  }
+
+  .hero-text p {
+    font-size: 20px;
+  }
+
+  .cta {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .category-item img, .hoodie-item img, .featured-item img {
+    max-width: 250px;  /* Adjusted for smaller tablets */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .navbar .nav-links.show {
+    display: flex;
+  }
+
+  .navbar .nav-links li {
+    margin-bottom: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .cta {
+    font-size: 16px;
+  }
+
+  .category-item img, .featured-item img, .hoodie-item img {
+    max-width: 90%; /* Full width for mobile */
+    height: auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #1a1a1a;
+    padding: 20px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .cta {
+    font-size: 14px;
+  }
+
+  .category-item img, .hoodie-item img, .featured-item img {
+    max-width: 100%; /* Full width on smaller screens */
+    height: auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 5%;
+  }
+
+  .footer-bottom {
+    padding-top: 15px;
+  }
+}
+
